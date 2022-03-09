@@ -81,7 +81,6 @@ return $response
 }
 
 $SGName=$SGName -replace "`"",""
-#$SGName="SG-TB-MDM-MPA-Users"
 Remove-item -Path "C:\Temp\IntuneApps_Matching_SGAssigned.csv" -Force -ErrorAction SilentlyContinue
 
 Connect-MSGraph
