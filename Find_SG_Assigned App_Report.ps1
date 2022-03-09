@@ -1,4 +1,15 @@
-﻿param(
+<#
+.SYNOPSIS
+	This script finds out all the Intune Applications Deployed to particular Group
+
+.EXAMPLE
+.\Find_SG_Assigned App_Report.ps1 -SGName "<Name of Group>"
+
+.EXAMPLE
+.\Find_SG_Assigned App_Report.ps1 -SGName "<Name of Group>"  -CheckOnlyWin32_and_LOB 
+#>
+
+param(
 [parameter(Mandatory=$True)]
 $SGName,
 [switch]$CheckOnlyWin32_and_LOB=$false
@@ -128,4 +139,3 @@ $grps=$null
 $result | fl
 
 $result | export-csv "c:\temp\IntuneApps_Matching_SGAssigned.csv" -NoClobber -NoTypeInformation
-
